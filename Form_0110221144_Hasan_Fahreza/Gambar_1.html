@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&family=Syne:wght@800&display=swap" rel="stylesheet" />
+    <title>Hasan Fahreza</title>
+  </head>
+  <body style="background-color: #fddcc1; padding: 2rem">
+    <div style="margin: auto; width: 50%; background-color: rgb(255, 210, 244); padding: 2rem; font-family: 'Roboto', sans-serif; color: rgb(233, 0, 0); border-style: solid">
+      <div style="text-align: center; margin-top: -1rem">
+        <h1 style="font-family: 'Syne', sans-serif; font-size: 2rem">Black Goose Bistro | Pizza On Demand</h1>
+        <p style="font-family: 'Pacifico', cursive; font-size: 0.9rem; margin-top: -1rem">Our 12" wood-fired pizzas are available for delivery. Build your custom pizza and we'll deliver it within an hour.</p>
+      </div>
+      <p>Your Information</p>
+      <form action="/action_page.php">
+        <p>Name : <input type="text" id="name" style="border-radius: 0.3rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254)" /></p>
+        <p>Address : <input type="text" id="address" style="border-radius: 0.3rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254)" /></p>
+        <p>Telephone Number : <input type="text" id="NOHP" style="border-radius: 0.3rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254)" /></p>
+        <p>Email : <input type="text" id="Mail" style="border-radius: 0.3rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254)" /></p>
+        <p>Delivery Instructions</p>
+        <textarea id="DInstruc" name="DInstruc" rows="4" cols="50" maxlength="400" style="border-radius: 0.3rem; color: rgb(184, 19, 19); font-weight: 1000; border: none; background: rgb(255, 244, 254)"></textarea>
+        <br />
+        <h2>Design Your Pizza :</h2>
+        <p>Pizza Specs</p>
+        <p>Crust (Choose One):</p>
+        <ol style="list-style: none">
+          <li>(<input type="radio" name="Radio" id="crust1" />) Classic White</li>
+          <li>(<input type="radio" name="Radio" id="crust2" />) Multigrain</li>
+          <li>(<input type="radio" name="Radio" id="crust3" />) Cheese Stufed Crust</li>
+          <li>(<input type="radio" name="Radio" id="crust4" />) Gluten Free</li>
+        </ol>
+        <p>Topping (Choose As Many As You Want):</p>
+        <ol style="list-style: none">
+          <li>[<input type="checkbox" id="Top1" name="check" checked="" />] Red Sauce</li>
+          <li>[<input type="checkbox" id="Top2" name="check" />] White sauce</li>
+          <li>[<input type="checkbox" id="Top3" name="check" />] Mozzarella cheese</li>
+          <li>[<input type="checkbox" id="Top4" name="check" />] Papperoni</li>
+          <li>[<input type="checkbox" id="Top5" name="check" />] Mushrooms</li>
+          <li>[<input type="checkbox" id="Top6" name="check" />] Pappers</li>
+          <li>[<input type="checkbox" id="Top7" name="check" />] Anchovies</li>
+        </ol>
+        <p>Number</p>
+        <label for="pizzas">How Many Pizzas: <input type="number" name="pizzas" id="pizzas" min="1" max="6" style="color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254)" /></label> <br />
+        <br />
+        <input type="submit" value="Bring Me A Pizza" style="border-radius: 0.5rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254); padding: 0.5rem" />
+        <input type="reset" value="Reset" style="border-radius: 0.5rem; color: rgb(184, 19, 19); font-weight: 800; border: none; background: rgb(255, 244, 254); padding: 0.5rem" />
+      </form>
+    </div>
+  </body>
+</html>
