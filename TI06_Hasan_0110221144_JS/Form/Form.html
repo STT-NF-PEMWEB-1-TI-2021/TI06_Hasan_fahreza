@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style type="text/css">
+		* {
+			box-sizing: border-box;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		fieldset {
+			display: block;
+			background-color: #eeeeee;
+		}
+		legend {
+			background-color: rgb(34, 0, 128);
+			color: white;
+			padding: 5px 10px;
+		}
+		label{
+			display: inline;
+		}
+		.errors {
+			padding: 2px;
+            display: none;
+            color: rgba(255, 0, 0, 0.438);
+        }
+        input, select {
+        	width: 100%;
+        	padding: 12px 20px;
+        	margin: 8px 0;
+        	display: inline-block;
+        	border: 1px solid;
+        	border-radius: 4px;
+        	box-sizing: border-box;
+        }
+
+        button {
+		width: 100%;
+		background-color: #389096;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		}
+		button:hover {
+			background-color: #50c9ee;
+		}
+	</style>
+</head>
+<body>
+
+	<fieldset id="formulir">
+		<legend>Formulir</legend>
+		<form id="form" autocomplete="off">
+			<label for="nama">Nama:</label>
+			<input id="nama" type="text" placeholder="Masukan Nama" autofocus="autofocus" required maxlength="30" minlength="1"/>
+			<span class="errors">Nama Tidak Boleh Kosong</span>
+			
+			<label for="email">Email:</label>
+			<input id="email" type="email" placeholder="Masukan Email" required maxlength="30" minlength="1"/>
+			<span class="errors">Email Tidak Boleh Kosong</span>
+			
+			<label for="jam">Jam:</label>
+			<input id="jam" type="time" required/>
+			<span class="errors">Jam Keberangkatan Tidak Boleh Kosong</span>
+			
+			<label for="tujuan">Tujuan:</label>
+			<input id="tujuan" type="text" placeholder="Masukan Tujuan Keberangkatan" required maxlength="30" minlength="1"/>
+			<span class="errors">Tujuan Tidak Boleh Kosong</span>
+			
+			<label for="jumlah">Jumlah:</label>
+			<input id="jumlah" type="number" placeholder="Masukan Jumlah Tiket" required maxlength="30" minlength="1"/>
+			<span class="errors">Jumlah Tiket Tidak Boleh Kosong</span>
+			<button type="button" id="proses" style="color: white;">Kirim</button>
+		</form>
+	</fieldset>
+	<div id="hasil"></div>
+
+	<script type="text/javascript">
+		
+		const btn = document.querySelector('#proses');
+
+		let nama = document.getElementById("nama");
+        let email = document.getElementById("email");
+        let jam = document.getElementById("jam");
+        let tujuan = document.getElementById("tujuan");
+        let jumlah = document.getElementById("jumlah");
+        let errors = document.getElementsByTagName("span");
+        
+        function proses() {
+        	if( nama.value == "" ) {
+        		errors[0].style.display = "block";
+        		nama.focus();
+        		return false;
+        	}else{
+        		errors[0].style.display = "none";
+        	}
+        	if( email.value == "" ) {
+        		errors[1].style.display = "block";
+        		email.focus() ;
+        		return false;
+        	}else{
+        		let regex = (/^\S+@\S+\.\S+$/);
+        		if(regex.test(email.value) === false) {
+        			errors[1].style.display = "block";
+        			errors[1].innerText="Mohon isi email yang valid!";
+        			email.focus();
+        			return false;
+        		} else{
+        			errors[1].style.display = "none";
+        		}
+        	}
+        	if( jam.value == "" ) {
+        		errors[2].style.display = "block";
+        		jam.focus() ;
+        		return false;
+        	}else{
+        		errors[2].style.display = "none";
+        	}
+        	if( tujuan.value == "" ) {
+        		errors[3].style.display = "block";
+        		tujuan.focus();
+        		return false;
+        	}else{
+        		errors[3].style.display = "none";
+        	}
+        	if( jumlah.value == "" ) {
+        		errors[4].style.display = "block";
+        		jumlah.focus();
+        		return false;
+        	}else{
+        		errors[4].style.display = "none";
+        	}
+        	let tampil = "<h3>Hasil:</h3>" +
+                "<p>Nama: <strong>" + nama.value + "</strong></p>" +
+                "<p>Email: <strong>" + email.value + "</strong></p>" +
+                "<p>Jam: <strong>" + jam.value + "</strong> <b>WIB</b> </p>" +
+                "<p>Tujuan: <strong>" + tujuan.value + "</strong></p>" +
+                "<p>Jumlah: <strong>" + jumlah.value + "</strong></p>";
+            document.getElementById('hasil').innerHTML = tampil;
+            let hilang = document.getElementById("formulir");
+            hilang.style.display = "none";
+        }
+        btn.addEventListener("click", async (e) => {
+            e.preventDefault();
+            proses();
+        });
+	</script>
+</body>
+</html>

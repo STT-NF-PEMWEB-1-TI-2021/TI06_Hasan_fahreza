@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Message</title>
+
+    <style type="text/css">
+    	.chatBox{
+        margin: 2px;
+        border: solid 2px rgb(0, 20, 196);
+        width: 350px;
+        height: 450px;
+    }
+        .inp{
+            width: 293px; 
+            margin: 2px; 
+            border: solid 2px rgb(111, 0, 255);
+        }
+        p{
+            margin: 0;
+        }
+    </style>
+    <script>
+        function kirim(){
+            let chat    = document.getElementById("message").value;
+            let chatBox = document.getElementById("chatBox");
+            chatBox.insertAdjacentHTML("beforeend","<p>"+chat+"</p>");
+            console.log(chat);
+    }
+    </script>
+</head>
+<body>
+    <h2>Chat Message</h2>
+    <div class="chatBox">
+        <div id="chatBox"></div>
+    </div>
+    <input class="inp" type="text" id="message" placeholder="Message..." onchange="kirim()">
+    <button style="background-color: rgb(255, 154, 230);" type="button">Kirim</button>
+</body>
+</html>

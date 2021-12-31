@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication</title>
+    <script src="Autentikasi.js"></script>
+</head>
+<body>
+    <h2>User Login</h2>
+    <form id="login" onsubmit="login(event)">
+        <p>Nama</p>
+        <input type="text" name="nama" id="nama" value="" placeholder="xant2021" size="30" onchange="login()">
+        <p>Password</p>
+        <input type="password" name="pass" id="pass" value="" placeholder="12345" size="30" onchange="login()">
+        <input type="submit" value="Login" name="kirim">
+    </form>
+</body>
+</html>

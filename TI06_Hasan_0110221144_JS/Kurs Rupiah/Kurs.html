@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+
+    <script>
+        function hasil() {
+            let angka1 = parseInt(document.getElementById("nilai").value);
+            let angka2 = parseInt(document.getElementById("kurs").value);
+            let hasil = angka1 * angka2;
+            document.getElementById("hasil").value = hasil;
+            console.log(hasil);
+        }
+    </script>
+</head>
+<body>
+    <table border="3" cellpadding="2" cellspacing="2" style="background-color: rgb(8, 255, 181);">
+        <tr>
+            <th>Masukkan Nilai</th>
+            <th>Valas</th>
+            <th>Nilai Rupiah</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="nilai" name="txtNilai"></td>
+            <td>
+                <select name="txtKurs" id="kurs" onchange="hasil()">
+                    <option value="9915">1 Dolar US</option>
+                    <option value="1588">1 Euro</option>
+                    <option value="120">1 Yen </option>
+                    <option value="3952">1 Riyal</option>
+                    <option value="13472">1 Dollar SG</option>
+                    <option value="874">1 Ringgit </option>
+                </select>
+            </td>
+            <td><input type="text" id="hasil" name="hasil" readonly="readonly"></td>
+        </tr>
+    </table>
+</body>
+</html>
